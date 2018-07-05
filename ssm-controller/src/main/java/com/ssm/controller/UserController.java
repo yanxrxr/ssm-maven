@@ -21,4 +21,12 @@ public class UserController {
 		System.out.println("User name: " + name);
 		return name;
 	}
+	
+	@ResponseBody
+	@RequestMapping("addUser")
+	public int addUser(String userName, String email, String password) {
+		int num = userService.addUser(userName, email, password);
+		System.out.println(num);
+		return num;
+	}
 }
